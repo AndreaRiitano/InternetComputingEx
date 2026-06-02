@@ -1,0 +1,6 @@
+Esame di Reti di Calcolatori - Prova scritta del 18 marzo 2021 - Seconda parte
+Esercizio 4
+Si vuole realizzare un sistema per gestire acquisti. Il sistema comprende un insieme di Client, un insieme di Negozi e un nodo Server. Un Client interagisce con il Server per cercare un prodotto. L'obiettivo del Server e trovare il Negozio disposto a vendere quel prodotto al minor prezzo possibile.
+Il Server riceve sulla porta TCP 1111 la richiesta di acquisto di un prodotto <id_prodotto, quantita, prezzoMassimo> da parte di un Client. Il Server inoltra la richiesta a tutti i Negozi noti sulla porta TCP 2222, raccoglie le offerte e accetta solo quelle con prezzo minore o uguale al prezzoMassimo. Se arrivano offerte valide, sceglie quella minore e risponde al Client con <idNegozio, prezzoAcquisto>; se non arriva nessuna offerta, risponde con il messaggio Nessuna offerta e arrivata.
+Ogni 24 ore il Server invia a ciascun Negozio, sulla porta UDP 3333, l'informazione sull'importo totale di prodotti venduti nella giornata da quel negozio.
+Si realizzino Server, Negozio e Client. Si implementino due main: uno avvia il Server con hostname shop.dimes.it e gestione di piu richieste contemporanee; uno avvia un Client che inoltra una richiesta e attende risposta.
