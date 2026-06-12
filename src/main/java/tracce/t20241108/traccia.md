@@ -1,0 +1,6 @@
+Esame di Reti di Calcolatori - Prova scritta dell'8 novembre 2024 - Seconda Parte
+Esercizio 2
+Si vuole realizzare un'applicazione di rete in Java per la gestione delle conversioni di valuta. Il sistema e costituito da un Server per la gestione delle richieste di conversione e da un insieme di K Client.
+Un Client, identificato dal proprio ID, interagisce con il Server per richiedere la conversione di valuta. Il Server riceve sulla porta TCP 2222 una richiesta composta da una stringa contenente ID del Client, codice della valuta di partenza, codice della valuta di destinazione e importo da convertire. Il Server calcola il valore convertito con un tasso casuale tra 0.1 e 5 e restituisce al Client un oggetto con importo convertito e tasso applicato. Se ID o codici valuta non sono validi, restituisce un messaggio di errore.
+Il Server puo elaborare fino a 10 conversioni contemporaneamente; le richieste in eccesso sono rifiutate con valore -1. Il Server memorizza tutte le richieste e ogni 15 minuti invia ai Client registrati al gruppo multicast 239.255.0.1:5000 un datagramma con numero di conversioni elaborate e tasso di cambio medio del periodo.
+Si realizzino le classi Server e Client e due main: uno avvia il Server con hostname currency.dimes.unical.it, l'altro avvia un Client che invia richieste e ascolta le notifiche multicast.
