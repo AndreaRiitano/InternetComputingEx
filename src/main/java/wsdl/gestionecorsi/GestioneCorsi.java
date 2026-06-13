@@ -21,6 +21,4 @@ public class GestioneCorsi {
         return corso;
     }
 
-
-
 }
